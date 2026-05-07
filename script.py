@@ -8,7 +8,7 @@ from faker import Faker
 fake = Faker('es_ES')
 
 # Configuración inicial
-NUM_RECORDS = 5000
+NUM_RECORDS = 7000
 CATEGORIES =['playa', 'coches', 'deporte', 'cocina', 'viajes', 'musica', 'videojuegos']
 
 # Definición de plantillas por categoría (al menos 15 por cada una con jerga realista)
