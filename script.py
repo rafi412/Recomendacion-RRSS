@@ -10,7 +10,7 @@ fake = Faker('es_ES')
 
 # Configuración
 NUM_RECORDS = 5000
-CATEGORIES =['playa', 'coches', 'deporte', 'cocina', 'viajes', 'musica', 'videojuegos']
+CATEGORIES =['playa', 'coches', 'deporte', 'cocina', 'viajes', 'musica', 'videojuegos', 'animales']
 
 # --- SISTEMA COMBINATORIO PARA MAYOR REALISMO ---
 COMPONENTS = {
@@ -48,7 +48,10 @@ COMPONENTS = {
         'open':["GG,", "Gente,", "Increíble,", "Ragequit inminente:", "", "Literalmente", "Vaya tela:"],
         'core':["el lag me ha arruinado la racha de victorias", "abriendo loot boxes y solo sale humo", "farmeando XP como un tryhard para hacer level up", "han nerfeado a mi main otra vez", "gráficos de locos con el ray tracing", "carrileando a {name} toda la partida", "bugeado en la pared, genial el parche", "ese boss tiene una hitbox rotísima"],
         'close':["🎮", "xd.", "a llorar a la llorería.", "F en el chat.", "🕹️", "menuda estafa.", "10/10 IGN."]
-    }
+    },
+    'animales': {'open': ["Mirad quién aparece por aquí,", "No puedo con esto,", "Literalmente el mejor momento del día:", "", "De paseo por {city},", "Modo amante de los animales:", "Qué ternura,"], 
+                 'core': ["mi perro corriendo como un loco por el parque", "el gato se ha quedado dormido encima del teclado otra vez", "alimentando a unos patos en el lago", "mi conejo ha decidido destruir media habitación", "viendo a este cachorro aprender trucos nuevos", "el veterinario dice que está perfectamente sano", "paseo eterno con {name} y el perro", "este gato callejero ya es prácticamente mío"], 
+                 'close': ["🐶", "🐱", "me derrito.", "demasiado adorable.", "❤️", "necesito 20 más.", "qué bonitos son."]}
 }
 
 # HASHTAGS AMPLIADOS MASIVAMENTE
@@ -87,7 +90,10 @@ HASHTAGS = {
         '#Gaming', '#Gamer', '#Esports', '#Twitch', '#LevelUp', '#Tryhard', '#Setup', '#PCGaming', 
         '#PlayStation', '#Xbox', '#Nintendo', '#Streamer', '#Noob', '#ProGamer', '#Loot', 
         '#RPG', '#Shooter', '#GGWP', '#Lag', '#Discord', '#IndieGames', '#RetroGaming'
-    ]
+    ],
+    'animales': ['#Mascotas', '#Perros', '#Gatos', '#AnimalLover', '#DogLife', '#CatLife', 
+                 '#Cachorro', '#PetFriendly', '#Adopta', '#Veterinario', '#Naturaleza', '#PetLovers', 
+                 '#Cute', '#Animales', '#Mascota', '#Perritos', '#Michis', '#Paseo', '#AmorAnimal', '#VidaAnimal']
 }
 
 def remove_accents(input_str):
