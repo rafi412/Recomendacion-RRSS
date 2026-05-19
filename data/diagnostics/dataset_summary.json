@@ -1,0 +1,15 @@
+{
+  "n_posts": 11000,
+  "n_categories": 8,
+  "ambiguous_rate": 0.4243636363636364,
+  "noisy_label_rate": 0.036,
+  "missing_description_rate": 0.028272727272727272,
+  "missing_hashtags_rate": 0.17954545454545454,
+  "empty_text_rate": 0.011545454545454546,
+  "mean_words": 17.336454545454547,
+  "median_words": 17.0,
+  "tfidf_vocab_size": 7480,
+  "similitud_intra_global": 0.044624316691751265,
+  "similitud_inter_global": 0.02107182073840899,
+  "separacion_intra_inter": 0.023552495953342273
+}

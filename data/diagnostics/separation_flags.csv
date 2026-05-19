@@ -1,0 +1,9 @@
+categoria,similitud_intra_media,categoria_inter_mas_cercana,similitud_inter_mas_cercana,brecha,diagnostico
+videojuegos,0.0568,musica,0.0236,0.0332,solapada
+animales,0.0498,playa,0.0277,0.0221,solapada
+playa,0.0475,animales,0.0277,0.0198,solapada
+coches,0.0449,viajes,0.0257,0.0192,solapada
+cocina,0.0419,viajes,0.0242,0.0177,solapada
+deporte,0.0407,coches,0.0235,0.0172,solapada
+musica,0.0375,playa,0.0241,0.0134,solapada
+viajes,0.0379,coches,0.0257,0.0122,solapada
