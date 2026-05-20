@@ -1,9 +1,0 @@
-categoria,n_posts,similitud_intra_media,similitud_intra_p10,similitud_intra_p90
-videojuegos,1064,0.0568,0.0,0.1529
-animales,1052,0.0498,0.0,0.1165
-playa,1571,0.0475,0.0,0.1109
-coches,1256,0.0449,0.0,0.1022
-cocina,1222,0.0419,0.0,0.0971
-deporte,1268,0.0407,0.0,0.0913
-viajes,1912,0.0379,0.0,0.0891
-musica,1528,0.0375,0.0,0.0766
