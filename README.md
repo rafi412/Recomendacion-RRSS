@@ -67,7 +67,7 @@ El flujo del proyecto puede entenderse así:
 1. Se entrena un baseline supervisado con `TF-IDF`.
 2. Se observa que clasificar una única categoría no siempre captura bien el significado del texto.
 3. Se pasa a embeddings para modelar cercanía semántica entre publicaciones.
-4. Finalmente se comparan ambos enfoques con ejemplos y métricas visuales más interpretables que un simple acierto binario.
+4. Finalmente se comparan ambos enfoques con ejemplos y gráficas.
 
 ## Ejecución orientativa
 
