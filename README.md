@@ -1,89 +1,135 @@
-# TFM - Recomendación de Contenido Textual con TF-IDF y Embeddings
+# TFM - Sistema de Recomendación de Contenido Textual y Visual
 
-Este proyecto estudia un sistema de recomendación basado en contenido para publicaciones textuales de estilo red social. El trabajo parte de un baseline supervisado con `TF-IDF + LogisticRegression` y evoluciona hacia un enfoque semántico con embeddings y similitud coseno.
+Este proyecto desarrolla un sistema de recomendación basado en contenido capaz de sugerir publicaciones e imágenes a partir de los intereses de un usuario.
 
-La idea principal del TFM no es solo comparar modelos, sino observar cómo cambia el comportamiento del sistema cuando el texto deja de ser limpio y aparece ambigüedad, ruido, vocabulario compartido y señales mixtas entre categorías.
+El trabajo comienza con un enfoque clásico de clasificación textual mediante `TF-IDF + LogisticRegression`, evoluciona hacia recomendaciones semánticas utilizando embeddings y similitud coseno, incorpora un sistema de clasificación visual mediante Transfer Learning y finaliza con una integración de ambos enfoques en un sistema de recomendación completo.
+
+El objetivo principal no es únicamente comparar modelos, sino analizar cómo distintas técnicas de Inteligencia Artificial pueden utilizarse para representar, clasificar y recomendar contenido en escenarios con ambigüedad, ruido y señales mixtas entre categorías.
+
+Enlaces con datos y modelos necesarios:
+modelos: https://drive.google.com/drive/folders/1lOIttVFrqVYnPeaoNt7iVGgWQ5zVHX2N?usp=drive_link
+datos: https://drive.google.com/drive/folders/1kg7aF3m1hMnaPOwWuZDPcCE2H-KAss4r?usp=drive_link
 
 ## Tecnologías utilizadas
 
-- `Python`
-- `Jupyter Notebook`
-- `pandas` y `numpy`
-- `scikit-learn`
-- `matplotlib`
-- `sentence-transformers`
-- `joblib`
+* Python
+* Jupyter Notebook
+* Pandas y NumPy
+* Scikit-learn
+* Matplotlib
+* SentenceTransformers
+* PyTorch
+* Torchvision
+* Joblib
 
 ## Estructura general
 
-- [01_clasificacion_textual_supervisada.ipynb]: construye el baseline supervisado del proyecto.
-- [02_recomendacion_embeddings.ipynb]: transforma el problema hacia recomendación semántica con embeddings.
-- [03_comparacion_modelos_embeddings.ipynb]: compara ambos enfoques con ejemplos reales y visualizaciones interpretables.
-- [data/posts.csv]: dataset principal del proyecto.
-- [pipeline_textual.pkl]: pipeline entrenado del modelo TF-IDF.
-- `models/`: artefactos del modelo de embeddings.
-- `artifacts/`: salidas auxiliares generadas durante los notebooks.
+* `01_clasificacion_textual_supervisada.ipynb`
+* `02_recomendacion_embeddings.ipynb`
+* `03_comparacion_tfidf_embeddings.ipynb`
+* `04_transfer_learning_vision.ipynb`
+* `05_sistema_recomendacion_final.ipynb`
+
+Datos y modelos:
+
+* `data/posts.csv`
+* `data/imagenes/`
+* `pipeline_textual.pkl`
+* `models/`
+* `artifacts/`
 
 ## Qué hace cada notebook
 
 ### 1. Clasificación textual supervisada
 
-El notebook `01` entrena un clasificador basado en `TF-IDF + LogisticRegression`. Su función es servir como baseline interpretable y mostrar hasta dónde puede llegar un enfoque léxico clásico cuando el dataset contiene ruido y ambigüedad.
+Construye el baseline del proyecto utilizando TF-IDF y Regresión Logística.
 
-De forma general:
+Funciones principales:
 
-- carga y revisa el dataset,
-- prepara el texto,
-- entrena el pipeline supervisado,
-- evalúa el rendimiento del baseline,
-- y guarda el pipeline para reutilizarlo después.
+* Análisis inicial del dataset.
+* Vectorización mediante TF-IDF.
+* Entrenamiento del clasificador.
+* Evaluación mediante métricas y matriz de confusión.
+* Exportación del modelo entrenado.
 
-### 2. Recomendación con embeddings
+---
 
-El notebook `02` cambia el enfoque desde clasificación hacia recuperación semántica. En vez de predecir una única etiqueta, representa cada publicación como un vector usando `SentenceTransformers` y recupera contenido parecido mediante similitud coseno.
+### 2. Recomendación mediante embeddings
 
-De forma general:
+Transforma el problema de clasificación en un sistema de recuperación semántica.
 
-- prepara el texto para embeddings,
-- genera vectores semánticos,
-- construye rankings de recomendaciones,
-- y guarda los artefactos necesarios para reutilizarlos en la comparación final.
+Funciones principales:
 
-### 3. Comparación práctica entre enfoques
+* Generación de embeddings para cada publicación.
+* Construcción de perfiles vectoriales.
+* Recuperación mediante similitud coseno.
+* Evaluación de recomendaciones.
 
-El notebook `03` no vuelve a entrenar modelos. Reutiliza los artefactos anteriores para comparar cómo responden `TF-IDF` y embeddings ante consultas reales, especialmente cuando las frases son ambiguas o mezclan varias intenciones.
+---
 
-La comparación se centra en:
+### 3. Comparativa TF-IDF vs Embeddings
 
-- confianza e incertidumbre de `TF-IDF`,
-- recuperación semántica de embeddings,
-- diferencias prácticas entre clasificación y ranking,
-- y visualizaciones simples para interpretar el comportamiento de ambos enfoques.
+Compara ambos enfoques utilizando consultas y escenarios similares.
 
-## Funcionamiento resumido
+Aspectos analizados:
 
-El flujo del proyecto puede entenderse así:
+* Capacidad de clasificación.
+* Recuperación semántica.
+* Robustez ante ambigüedad.
+* Diferencias entre clasificación y recomendación.
+* Visualización e interpretación de resultados.
 
-1. Se entrena un baseline supervisado con `TF-IDF`.
-2. Se observa que clasificar una única categoría no siempre captura bien el significado del texto.
-3. Se pasa a embeddings para modelar cercanía semántica entre publicaciones.
-4. Finalmente se comparan ambos enfoques con ejemplos y gráficas.
+---
 
-## Ejecución orientativa
+### 4. Sistema visual mediante Transfer Learning
 
-El orden recomendado de ejecución es:
+Implementa un clasificador de imágenes utilizando un modelo preentrenado y fine-tuning de la última capa.
+
+Funciones principales:
+
+* Preparación del dataset visual.
+* Entrenamiento del modelo base.
+* Fine-tuning.
+* Comparación entre modelo original y ajustado.
+* Evaluación mediante accuracy y matrices de confusión.
+
+---
+
+### 5. Sistema final de recomendación
+
+Integra los componentes desarrollados durante el proyecto.
+
+Funciones principales:
+
+* Generación de perfiles de usuario simulados.
+* Recomendación de publicaciones.
+* Recomendación de imágenes.
+* Evaluación conjunta del sistema.
+* Ejemplos prácticos de uso.
+
+## Flujo general del proyecto
+
+1. Construcción y análisis de datasets textuales y visuales.
+2. Entrenamiento del modelo supervisado basado en TF-IDF.
+3. Implementación del sistema semántico basado en embeddings.
+4. Comparación de ambos enfoques.
+5. Entrenamiento del modelo visual mediante Transfer Learning.
+6. Integración de texto e imagen en un sistema de recomendación final.
+
+## Ejecución recomendada
+
+Los notebooks deben ejecutarse en el siguiente orden:
 
 1. `01_clasificacion_textual_supervisada.ipynb`
 2. `02_recomendacion_embeddings.ipynb`
-3. `03_comparacion_modelos_embeddings.ipynb`
+3. `03_comparacion_tfidf_embeddings.ipynb`
+4. `04_transfer_learning_vision.ipynb`
+5. `05_sistema_recomendacion_final.ipynb`
 
-Para la parte de embeddings puede ser necesario instalar las dependencias listadas en [requirements_embeddings.txt].
+Instalar previamente las dependencias incluidas en los archivos de requisitos correspondientes.
 
 ## Objetivo del proyecto
 
-Este TFM busca mostrar una evolución metodológica sencilla pero realista:
+El objetivo de este TFM es estudiar la evolución desde técnicas tradicionales de clasificación textual hacia sistemas de recomendación más avanzados basados en representaciones semánticas y visión por computador.
 
-- empezar con un baseline claro,
-- detectar sus límites,
-- incorporar una representación semántica más flexible,
-- y comparar ambos enfoques con una lectura práctica y comprensible.
+El proyecto busca demostrar cómo diferentes técnicas de Inteligencia Artificial pueden combinarse para recomendar contenido textual y visual de forma coherente, utilizando perfiles de usuario simulados y conjuntos de datos específicos para cada modalidad.
