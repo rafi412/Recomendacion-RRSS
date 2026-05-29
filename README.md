@@ -7,7 +7,9 @@ El trabajo comienza con un enfoque clásico de clasificación textual mediante `
 El objetivo principal no es únicamente comparar modelos, sino analizar cómo distintas técnicas de Inteligencia Artificial pueden utilizarse para representar, clasificar y recomendar contenido en escenarios con ambigüedad, ruido y señales mixtas entre categorías.
 
 Enlaces con datos y modelos necesarios:
+
 modelos: https://drive.google.com/drive/folders/1lOIttVFrqVYnPeaoNt7iVGgWQ5zVHX2N?usp=drive_link
+
 datos: https://drive.google.com/drive/folders/1kg7aF3m1hMnaPOwWuZDPcCE2H-KAss4r?usp=drive_link
 
 ## Tecnologías utilizadas
