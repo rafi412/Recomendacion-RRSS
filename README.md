@@ -21,7 +21,7 @@ La idea principal del TFM no es solo comparar modelos, sino observar cómo cambi
 - [03_comparacion_modelos_embeddings.ipynb]: compara ambos enfoques con ejemplos reales y visualizaciones interpretables.
 - [data/posts.csv]: dataset principal del proyecto.
 - [pipeline_textual.pkl]: pipeline entrenado del modelo TF-IDF.
-- `models/`: artefactos del modelo de embeddings.
+- `models/`: artefactos del modelo de embeddings multilingüe y comparativas locales.
 - `artifacts/`: salidas auxiliares generadas durante los notebooks.
 
 ## Qué hace cada notebook
@@ -40,7 +40,7 @@ De forma general:
 
 ### 2. Recomendación con embeddings
 
-El notebook `02` cambia el enfoque desde clasificación hacia recuperación semántica. En vez de predecir una única etiqueta, representa cada publicación como un vector usando `SentenceTransformers` y recupera contenido parecido mediante similitud coseno.
+El notebook `02` cambia el enfoque desde clasificación hacia recuperación semántica. En vez de predecir una única etiqueta, representa cada publicación como un vector usando `SentenceTransformers` y recupera contenido parecido mediante similitud coseno. El modelo activo del proyecto es `paraphrase-multilingual-MiniLM-L12-v2`, más adecuado para un corpus y unas consultas en español.
 
 De forma general:
 
